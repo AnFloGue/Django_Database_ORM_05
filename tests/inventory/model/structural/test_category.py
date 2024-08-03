@@ -40,9 +40,9 @@ def test_model_structure_column_data_types(model, field_name, expected_type):
     assert hasattr(
         model, field_name
     ), f"{model.__name__} model does not have '{field_name} field"
-
+    
     field = model._meta.get_field(field_name)
-
+    
     assert isinstance(field, expected_type), f"Field is not type {expected_type}"
 
 
@@ -55,15 +55,15 @@ def test_model_structure_column_data_types(model, field_name, expected_type):
     "model, expected_field_count",
     [
         (
-            Category,
-            6,
+                Category,
+                6,
         ),  # Replace with the expected number of fields in the SeasonalEvent model
     ],
 )
 def test_model_structure_field_count(model, expected_field_count):
     field_count = len(model._meta.fields)
     assert (
-        field_count == expected_field_count
+            field_count == expected_field_count
     ), f"{model.__name__} model has {field_count} fields, expected {expected_field_count}"
 
 
@@ -79,43 +79,43 @@ def test_model_structure_field_count(model, expected_field_count):
     ],
 )
 def test_model_structure_relationship(
-    model,
-    field_name,
-    expected_type,
-    related_model,
-    on_delete_behavior,
-    allow_null,
-    allow_blank,
+        model,
+        field_name,
+        expected_type,
+        related_model,
+        on_delete_behavior,
+        allow_null,
+        allow_blank,
 ):
     # Check if the field exists in the model
     assert hasattr(
         model, field_name
     ), f"{model.__name__} model does not have '{field_name} field"
-
+    
     # Get the field from the model
     field = model._meta.get_field(field_name)
-
+    
     # Check if it's a ForeignKey
     assert isinstance(field, expected_type), f"Field is not type {expected_type}"
-
+    
     # Check the related model
     assert (
-        field.related_model == related_model
+            field.related_model == related_model
     ), f"'{field_name}' field does not relate to {related_model.__name__} model"
-
+    
     # Check the on_delete behavior
     assert (
-        field.remote_field.on_delete == on_delete_behavior
+            field.remote_field.on_delete == on_delete_behavior
     ), f"'{field_name}' field does not have on_delete={on_delete_behavior}"
-
+    
     # Check if the field allows null values
     assert (
-        field.null == allow_null
+            field.null == allow_null
     ), f"'{field_name}' field does not allow null values as expected"
-
+    
     # Check if the field allows blank values
     assert (
-        field.blank == allow_blank
+            field.blank == allow_blank
     ), f"'{field_name}' field does not allow blank values as expected"
 
 
@@ -137,10 +137,10 @@ def test_model_structure_relationship(
 def test_model_structure_nullable_constraints(model, field_name, expected_nullable):
     # Get the field from the model
     field = model._meta.get_field(field_name)
-
+    
     # Check if the nullable constraint matches the expected value
     assert (
-        field.null is expected_nullable
+            field.null is expected_nullable
     ), f"Field '{field_name}' has unexpected nullable constraint"
 
 
@@ -159,10 +159,10 @@ def test_model_structure_nullable_constraints(model, field_name, expected_nullab
 def test_model_structure_default_values(model, field_name, expected_default_value):
     # Get the field from the model
     field = model._meta.get_field(field_name)
-
+    
     # Check if the default value matches the expected value
     default_value = field.default
-
+    
     assert default_value == expected_default_value
 
 
@@ -181,10 +181,10 @@ def test_model_structure_default_values(model, field_name, expected_default_valu
 def test_model_structure_column_lengths(model, field_name, expected_length):
     # Get the field from the model
     field = model._meta.get_field(field_name)
-
+    
     # Check if the max length matches the expected value
     assert (
-        field.max_length == expected_length
+            field.max_length == expected_length
     ), f"Field '{field_name}' has unexpected max length"
 
 
@@ -206,6 +206,6 @@ def test_model_structure_column_lengths(model, field_name, expected_length):
 def test_model_structure_unique_fields(model, field_name, is_unique):
     # Get the field from the model
     field = model._meta.get_field(field_name)
-
+    
     # Check if the max length matches the expected value
     assert field.unique == is_unique, f"Field '{field_name}' uniqueness mismatch"
