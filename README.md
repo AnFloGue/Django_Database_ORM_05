@@ -24,12 +24,16 @@
     ```
 
 ### Running the Local Server
-1. Start the development server:
-    ```bash
-    python manage.py runserver
-    ```
+Start the development server:
 
-    This will launch the Django server at http://127.0.0.1:8000/ by default. You can access your application in a web browser.
+ ```bash
+ python manage.py runserver
+ ```
+
+   This will launch the Django admin panel at http://127.0.0.1:8000
+
+   This will launch the Django admin panel at http://127.0.0.1:8000/admin/
+
 
 ### Creating Models
 1. Models define the data structure for your application. 
