@@ -22,6 +22,10 @@
     ```bash
     pip install -r requirements.txt
     ```
+3. Refresh (update) the dependencies document:
+    ```bash
+    pip freeze > requirements.txt
+    ```
 
 ### Running the Local Server
 Start the development server:
@@ -65,7 +69,7 @@ Start the development server:
 1. this command will show the migrations status:
     ```bash
     python manage.py showmigrations
-       
+    ```
 
 ### Rollback Migration 
 1. this command will rollback the migrations:
@@ -75,7 +79,7 @@ Start the development server:
    or to rollback all migrations:
     ```bash
     python manage.py migrate <app_name> zero
-
+    ```
 
 ### Creating an Admin User
 1. Create a superuser:
