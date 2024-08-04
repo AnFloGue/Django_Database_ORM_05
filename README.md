@@ -1,11 +1,20 @@
-# Getting Started
+
+___
+![Google Logo](https://static.djangoproject.com/img/logos/django-logo-negative.png)
+
+
+___
+
+# Django Project Template
+<br>
+
+___
+
 
 ### Installation
-1. Create a virtual environment (recommended):
-
-    If required, remove the existing virtual environment, run the following command:
+1. If required, remove the existing virtual environment, run the following command:
     ```bash
-    rm -rf env  
+    rm -rf env
     ```
 
     ```bash
@@ -21,8 +30,9 @@
 3. Install the dependencies:
     ```bash
     pip install -r requirements.txt
-    ```
-3. Refresh (update) the dependencies document:
+    ```            
+   
+4. if any package has been installed, refresh (update) the dependencies document:
     ```bash
     pip freeze > requirements.txt
     ```
@@ -34,9 +44,13 @@ Start the development server:
  python manage.py runserver
  ```
 
-   This will launch the Django admin panel at http://127.0.0.1:8000
+   This will launch the Django local server panel at 
+   
+<http://127.0.0.1:8000>
 
-   This will launch the Django admin panel at http://127.0.0.1:8000/admin/
+   This will launch the Django admin panel at 
+   
+<http://127.0.0.1:8000/admin/>
 
 
 ### Creating Models
@@ -99,5 +113,5 @@ Start the development server:
 ### Admin Panel
 1. Access the admin panel at:
 
-    http://127.0.0.1:8000/admin/
+    <http://127.0.0.1:8000/admin/>
     ```
